@@ -1,0 +1,749 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"8 ./FAT32_Simple.h
+[; ;./FAT32_Simple.h: 8: typedef struct {
+[s S142 `ul 1 `ul 1 `ul 1 `ul 1 `us 1 ]
+[n S142 . fat_begin_lba cluster_begin_lba sectors_per_cluster root_dir_first_cluster bytes_per_sector ]
+"50 ./SD_SPI.h
+[; ;./SD_SPI.h: 50: uint8_t SD_ReadSingleBlock(uint32_t blockAddr, uint8_t *buffer);
+[v _SD_ReadSingleBlock `(uc ~T0 @X0 0 ef2`ul`*uc ]
+"17 ./FAT32_Simple.h
+[; ;./FAT32_Simple.h: 17: typedef struct {
+[s S143 `uc -> 11 `i `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `ul 1 ]
+[n S143 . name attr reserved creation_time_tenth creation_time creation_date last_access_date first_cluster_high write_time write_date first_cluster_low file_size ]
+"30 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h: 30: int memcmp (const void *, const void *, size_t);
+[v _memcmp `(i ~T0 @X0 0 ef3`*Cv`*Cv`ui ]
+"27
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"51 ./SD_SPI.h
+[; ;./SD_SPI.h: 51: uint8_t SD_WriteSingleBlock(uint32_t blockAddr, uint8_t *buffer);
+[v _SD_WriteSingleBlock `(uc ~T0 @X0 0 ef2`ul`*uc ]
+"54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 54: __asm("INDF equ 00h");
+[; <" INDF equ 00h ;# ">
+"61
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 61: __asm("TMR0 equ 01h");
+[; <" TMR0 equ 01h ;# ">
+"68
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 68: __asm("PCL equ 02h");
+[; <" PCL equ 02h ;# ">
+"75
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 75: __asm("STATUS equ 03h");
+[; <" STATUS equ 03h ;# ">
+"161
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 161: __asm("FSR equ 04h");
+[; <" FSR equ 04h ;# ">
+"168
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 168: __asm("PORTA equ 05h");
+[; <" PORTA equ 05h ;# ">
+"230
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 230: __asm("PORTB equ 06h");
+[; <" PORTB equ 06h ;# ">
+"292
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 292: __asm("PORTC equ 07h");
+[; <" PORTC equ 07h ;# ">
+"354
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 354: __asm("PORTD equ 08h");
+[; <" PORTD equ 08h ;# ">
+"416
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 416: __asm("PORTE equ 09h");
+[; <" PORTE equ 09h ;# ">
+"454
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 454: __asm("PCLATH equ 0Ah");
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 461: __asm("INTCON equ 0Bh");
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 539: __asm("PIR1 equ 0Ch");
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 595: __asm("PIR2 equ 0Dh");
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 652: __asm("TMR1 equ 0Eh");
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 659: __asm("TMR1L equ 0Eh");
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 666: __asm("TMR1H equ 0Fh");
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 673: __asm("T1CON equ 010h");
+[; <" T1CON equ 010h ;# ">
+"767
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 767: __asm("TMR2 equ 011h");
+[; <" TMR2 equ 011h ;# ">
+"774
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 774: __asm("T2CON equ 012h");
+[; <" T2CON equ 012h ;# ">
+"845
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 845: __asm("SSPBUF equ 013h");
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 852: __asm("SSPCON equ 014h");
+[; <" SSPCON equ 014h ;# ">
+"922
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 922: __asm("CCPR1 equ 015h");
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 929: __asm("CCPR1L equ 015h");
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 936: __asm("CCPR1H equ 016h");
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 943: __asm("CCP1CON equ 017h");
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1040: __asm("RCSTA equ 018h");
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1135: __asm("TXREG equ 019h");
+[; <" TXREG equ 019h ;# ">
+"1142
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1142: __asm("RCREG equ 01Ah");
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1149: __asm("CCPR2 equ 01Bh");
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1156: __asm("CCPR2L equ 01Bh");
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1163: __asm("CCPR2H equ 01Ch");
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1170: __asm("CCP2CON equ 01Dh");
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1240: __asm("ADRESH equ 01Eh");
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1247: __asm("ADCON0 equ 01Fh");
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1348: __asm("OPTION_REG equ 081h");
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1418: __asm("TRISA equ 085h");
+[; <" TRISA equ 085h ;# ">
+"1480
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1480: __asm("TRISB equ 086h");
+[; <" TRISB equ 086h ;# ">
+"1542
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1542: __asm("TRISC equ 087h");
+[; <" TRISC equ 087h ;# ">
+"1604
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1604: __asm("TRISD equ 088h");
+[; <" TRISD equ 088h ;# ">
+"1666
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1666: __asm("TRISE equ 089h");
+[; <" TRISE equ 089h ;# ">
+"1704
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1704: __asm("PIE1 equ 08Ch");
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1760: __asm("PIE2 equ 08Dh");
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1817: __asm("PCON equ 08Eh");
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1864: __asm("OSCCON equ 08Fh");
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1929: __asm("OSCTUNE equ 090h");
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 1981: __asm("SSPCON2 equ 091h");
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2043: __asm("PR2 equ 092h");
+[; <" PR2 equ 092h ;# ">
+"2050
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2050: __asm("SSPADD equ 093h");
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2057: __asm("SSPMSK equ 093h");
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2062: __asm("MSK equ 093h");
+[; <" MSK equ 093h ;# ">
+"2179
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2179: __asm("SSPSTAT equ 094h");
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2348: __asm("WPUB equ 095h");
+[; <" WPUB equ 095h ;# ">
+"2418
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2418: __asm("IOCB equ 096h");
+[; <" IOCB equ 096h ;# ">
+"2488
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2488: __asm("VRCON equ 097h");
+[; <" VRCON equ 097h ;# ">
+"2558
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2558: __asm("TXSTA equ 098h");
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2644: __asm("SPBRG equ 099h");
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2706: __asm("SPBRGH equ 09Ah");
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2776: __asm("PWM1CON equ 09Bh");
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2846: __asm("ECCPAS equ 09Ch");
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2928: __asm("PSTRCON equ 09Dh");
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2972: __asm("ADRESL equ 09Eh");
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 2979: __asm("ADCON1 equ 09Fh");
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3013: __asm("WDTCON equ 0105h");
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3066: __asm("CM1CON0 equ 0107h");
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3131: __asm("CM2CON0 equ 0108h");
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3196: __asm("CM2CON1 equ 0109h");
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3247: __asm("EEDATA equ 010Ch");
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3252: __asm("EEDAT equ 010Ch");
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3259: __asm("EEADR equ 010Dh");
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3266: __asm("EEDATH equ 010Eh");
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3273: __asm("EEADRH equ 010Fh");
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3280: __asm("SRCON equ 0185h");
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3337: __asm("BAUDCTL equ 0187h");
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3389: __asm("ANSEL equ 0188h");
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3451: __asm("ANSELH equ 0189h");
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3501: __asm("EECON1 equ 018Ch");
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
+[; <" EECON2 equ 018Dh ;# ">
+"4 FAT32_Simple.c
+[; ;FAT32_Simple.c: 4: FAT32_Info fat_info;
+[v _fat_info `S142 ~T0 @X0 1 e ]
+"5
+[; ;FAT32_Simple.c: 5: uint8_t sector_buffer[512];
+[v _sector_buffer `uc ~T0 @X0 -> 512 `i e ]
+"8
+[; ;FAT32_Simple.c: 8: uint8_t FAT32_Init(void){
+[v _FAT32_Init `(uc ~T0 @X0 1 ef ]
+{
+[e :U _FAT32_Init ]
+[f ]
+"9
+[; ;FAT32_Simple.c: 9:     uint8_t *ptr;
+[v _ptr `*uc ~T0 @X0 1 a ]
+"12
+[; ;FAT32_Simple.c: 12:     if(!SD_ReadSingleBlock(0, sector_buffer))
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , -> -> -> 0 `i `l `ul &U _sector_buffer `i -> 0 `i 146  ]
+"13
+[; ;FAT32_Simple.c: 13:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 145  ]
+[e :U 146 ]
+"16
+[; ;FAT32_Simple.c: 16:     uint32_t partition_lba = *((uint32_t*)&sector_buffer[0x1BE + 8]);
+[v _partition_lba `ul ~T0 @X0 1 a ]
+[e = _partition_lba *U -> &U *U + &U _sector_buffer * -> -> + -> 446 `i -> 8 `i `ui `ux -> -> # *U &U _sector_buffer `ui `ux `*ul ]
+"19
+[; ;FAT32_Simple.c: 19:     if(!SD_ReadSingleBlock(partition_lba, sector_buffer))
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , _partition_lba &U _sector_buffer `i -> 0 `i 147  ]
+"20
+[; ;FAT32_Simple.c: 20:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 145  ]
+[e :U 147 ]
+"23
+[; ;FAT32_Simple.c: 23:     ptr = sector_buffer;
+[e = _ptr &U _sector_buffer ]
+"24
+[; ;FAT32_Simple.c: 24:     fat_info.bytes_per_sector = *((uint16_t*)&ptr[11]);
+[e = . _fat_info 4 *U -> &U *U + _ptr * -> -> 11 `i `x -> -> # *U _ptr `i `x `*us ]
+"25
+[; ;FAT32_Simple.c: 25:     fat_info.sectors_per_cluster = ptr[13];
+[e = . _fat_info 2 -> *U + _ptr * -> -> 13 `i `x -> -> # *U _ptr `i `x `ul ]
+"26
+[; ;FAT32_Simple.c: 26:     uint16_t reserved_sectors = *((uint16_t*)&ptr[14]);
+[v _reserved_sectors `us ~T0 @X0 1 a ]
+[e = _reserved_sectors *U -> &U *U + _ptr * -> -> 14 `i `x -> -> # *U _ptr `i `x `*us ]
+"27
+[; ;FAT32_Simple.c: 27:     uint32_t sectors_per_fat = *((uint32_t*)&ptr[36]);
+[v _sectors_per_fat `ul ~T0 @X0 1 a ]
+[e = _sectors_per_fat *U -> &U *U + _ptr * -> -> 36 `i `x -> -> # *U _ptr `i `x `*ul ]
+"28
+[; ;FAT32_Simple.c: 28:     fat_info.root_dir_first_cluster = *((uint32_t*)&ptr[44]);
+[e = . _fat_info 3 *U -> &U *U + _ptr * -> -> 44 `i `x -> -> # *U _ptr `i `x `*ul ]
+"31
+[; ;FAT32_Simple.c: 31:     fat_info.fat_begin_lba = partition_lba + reserved_sectors;
+[e = . _fat_info 0 + _partition_lba -> _reserved_sectors `ul ]
+"32
+[; ;FAT32_Simple.c: 32:     fat_info.cluster_begin_lba = fat_info.fat_begin_lba + (2 * sectors_per_fat);
+[e = . _fat_info 1 + . _fat_info 0 * -> -> -> 2 `i `l `ul _sectors_per_fat ]
+"34
+[; ;FAT32_Simple.c: 34:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 145  ]
+"35
+[; ;FAT32_Simple.c: 35: }
+[e :UE 145 ]
+}
+"38
+[; ;FAT32_Simple.c: 38: static void name_to_8_3(const char *filename, char *name83){
+[v _name_to_8_3 `(v ~T0 @X0 1 sf2`*Cuc`*uc ]
+{
+[e :U _name_to_8_3 ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _name83 `*uc ~T0 @X0 1 r2 ]
+[f ]
+"39
+[; ;FAT32_Simple.c: 39:     uint8_t i, j = 0;
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+"42
+[; ;FAT32_Simple.c: 42:     for(i = 0; i < 11; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 11 `i 149  ]
+[e $U 150  ]
+[e :U 149 ]
+"43
+[; ;FAT32_Simple.c: 43:         name83[i] = ' ';
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> -> 32 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 11 `i 149  ]
+[e :U 150 ]
+}
+"46
+[; ;FAT32_Simple.c: 46:     for(i = 0; i < 8 && filename[j] != '\0' && filename[j] != '.'; i++, j++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 155  ]
+[e :U 152 ]
+{
+"47
+[; ;FAT32_Simple.c: 47:         if(filename[j] >= 'a' && filename[j] <= 'z')
+[e $ ! && >= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 97 `ui <= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 122 `ui 156  ]
+"48
+[; ;FAT32_Simple.c: 48:             name83[i] = filename[j] - 32;
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> - -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `i -> 32 `i `uc ]
+[e $U 157  ]
+"49
+[; ;FAT32_Simple.c: 49:         else
+[e :U 156 ]
+"50
+[; ;FAT32_Simple.c: 50:             name83[i] = filename[j];
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux ]
+[e :U 157 ]
+"51
+[; ;FAT32_Simple.c: 51:     }
+}
+[e ; ++ _i -> -> 1 `i `uc ++ _j -> -> 1 `i `uc ]
+[e :U 155 ]
+[e $ && && < -> _i `i -> 8 `i != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 152  ]
+[e :U 153 ]
+}
+"54
+[; ;FAT32_Simple.c: 54:     while(filename[j] != '\0' && filename[j] != '.')
+[e $U 158  ]
+[e :U 159 ]
+"55
+[; ;FAT32_Simple.c: 55:         j++;
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 158 ]
+"54
+[; ;FAT32_Simple.c: 54:     while(filename[j] != '\0' && filename[j] != '.')
+[e $ && != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 159  ]
+[e :U 160 ]
+"57
+[; ;FAT32_Simple.c: 57:     if(filename[j] == '.'){
+[e $ ! == -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 161  ]
+{
+"58
+[; ;FAT32_Simple.c: 58:         j++;
+[e ++ _j -> -> 1 `i `uc ]
+"59
+[; ;FAT32_Simple.c: 59:         for(i = 8; i < 11 && filename[j] != '\0'; i++, j++){
+{
+[e = _i -> -> 8 `i `uc ]
+[e $U 165  ]
+[e :U 162 ]
+{
+"60
+[; ;FAT32_Simple.c: 60:             if(filename[j] >= 'a' && filename[j] <= 'z')
+[e $ ! && >= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 97 `ui <= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 122 `ui 166  ]
+"61
+[; ;FAT32_Simple.c: 61:                 name83[i] = filename[j] - 32;
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> - -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `i -> 32 `i `uc ]
+[e $U 167  ]
+"62
+[; ;FAT32_Simple.c: 62:             else
+[e :U 166 ]
+"63
+[; ;FAT32_Simple.c: 63:                 name83[i] = filename[j];
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux ]
+[e :U 167 ]
+"64
+[; ;FAT32_Simple.c: 64:         }
+}
+[e ; ++ _i -> -> 1 `i `uc ++ _j -> -> 1 `i `uc ]
+[e :U 165 ]
+[e $ && < -> _i `i -> 11 `i != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui 162  ]
+[e :U 163 ]
+}
+"65
+[; ;FAT32_Simple.c: 65:     }
+}
+[e :U 161 ]
+"66
+[; ;FAT32_Simple.c: 66: }
+[e :UE 148 ]
+}
+"69
+[; ;FAT32_Simple.c: 69: static uint32_t cluster_to_sector(uint32_t cluster){
+[v _cluster_to_sector `(ul ~T0 @X0 1 sf1`ul ]
+{
+[e :U _cluster_to_sector ]
+[v _cluster `ul ~T0 @X0 1 r1 ]
+[f ]
+"70
+[; ;FAT32_Simple.c: 70:     return fat_info.cluster_begin_lba +
+[e ) + . _fat_info 1 * - _cluster -> -> -> 2 `i `l `ul . _fat_info 2 ]
+[e $UE 168  ]
+"72
+[; ;FAT32_Simple.c: 72: }
+[e :UE 168 ]
+}
+"75
+[; ;FAT32_Simple.c: 75: uint8_t FAT32_OpenFile(const char *filename, DirEntry *entry){
+[v _FAT32_OpenFile `(uc ~T0 @X0 1 ef2`*Cuc`*S143 ]
+{
+[e :U _FAT32_OpenFile ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _entry `*S143 ~T0 @X0 1 r2 ]
+[f ]
+"76
+[; ;FAT32_Simple.c: 76:     char name83[11];
+[v _name83 `uc ~T0 @X0 -> 11 `i a ]
+"77
+[; ;FAT32_Simple.c: 77:     uint32_t sector;
+[v _sector `ul ~T0 @X0 1 a ]
+"78
+[; ;FAT32_Simple.c: 78:     uint16_t i;
+[v _i `us ~T0 @X0 1 a ]
+"79
+[; ;FAT32_Simple.c: 79:     DirEntry *dir;
+[v _dir `*S143 ~T0 @X0 1 a ]
+"81
+[; ;FAT32_Simple.c: 81:     name_to_8_3(filename, name83);
+[e ( _name_to_8_3 (2 , _filename &U _name83 ]
+"84
+[; ;FAT32_Simple.c: 84:     sector = cluster_to_sector(fat_info.root_dir_first_cluster);
+[e = _sector ( _cluster_to_sector (1 . _fat_info 3 ]
+"87
+[; ;FAT32_Simple.c: 87:     for(uint8_t s = 0; s < fat_info.sectors_per_cluster; s++){
+{
+[v _s `uc ~T0 @X0 1 a ]
+[e = _s -> -> 0 `i `uc ]
+[e $U 173  ]
+[e :U 170 ]
+{
+"88
+[; ;FAT32_Simple.c: 88:         if(!SD_ReadSingleBlock(sector + s, sector_buffer))
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 174  ]
+"89
+[; ;FAT32_Simple.c: 89:             return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+[e :U 174 ]
+"92
+[; ;FAT32_Simple.c: 92:         dir = (DirEntry*)sector_buffer;
+[e = _dir -> &U _sector_buffer `*S143 ]
+"93
+[; ;FAT32_Simple.c: 93:         for(i = 0; i < 16; i++){
+{
+[e = _i -> -> 0 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 175  ]
+[e $U 176  ]
+[e :U 175 ]
+{
+"95
+[; ;FAT32_Simple.c: 95:             if(dir[i].name[0] == 0x00)
+[e $ ! == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 0 `i 178  ]
+"96
+[; ;FAT32_Simple.c: 96:                 return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+[e :U 178 ]
+"99
+[; ;FAT32_Simple.c: 99:             if(dir[i].name[0] == 0xE5)
+[e $ ! == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 229 `i 179  ]
+"100
+[; ;FAT32_Simple.c: 100:                 continue;
+[e $U 177  ]
+[e :U 179 ]
+"103
+[; ;FAT32_Simple.c: 103:             if(memcmp(dir[i].name, name83, 11) == 0){
+[e $ ! == ( _memcmp (3 , , -> &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `*Cv -> &U _name83 `*Cv -> -> 11 `i `ui -> 0 `i 180  ]
+{
+"104
+[; ;FAT32_Simple.c: 104:                 memcpy(entry, &dir[i], sizeof(DirEntry));
+[e ( _memcpy (3 , , -> _entry `*v -> &U *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux `*Cv -> # `S143 `ui ]
+"105
+[; ;FAT32_Simple.c: 105:                 return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 169  ]
+"106
+[; ;FAT32_Simple.c: 106:             }
+}
+[e :U 180 ]
+"107
+[; ;FAT32_Simple.c: 107:         }
+}
+[e :U 177 ]
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 175  ]
+[e :U 176 ]
+}
+"108
+[; ;FAT32_Simple.c: 108:     }
+}
+[e ++ _s -> -> 1 `i `uc ]
+[e :U 173 ]
+[e $ < -> _s `ul . _fat_info 2 170  ]
+[e :U 171 ]
+}
+"110
+[; ;FAT32_Simple.c: 110:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+"111
+[; ;FAT32_Simple.c: 111: }
+[e :UE 169 ]
+}
+"114
+[; ;FAT32_Simple.c: 114: uint8_t FAT32_CreateFile(const char *filename, DirEntry *entry){
+[v _FAT32_CreateFile `(uc ~T0 @X0 1 ef2`*Cuc`*S143 ]
+{
+[e :U _FAT32_CreateFile ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _entry `*S143 ~T0 @X0 1 r2 ]
+[f ]
+"115
+[; ;FAT32_Simple.c: 115:     char name83[11];
+[v _name83 `uc ~T0 @X0 -> 11 `i a ]
+"116
+[; ;FAT32_Simple.c: 116:     uint32_t sector;
+[v _sector `ul ~T0 @X0 1 a ]
+"117
+[; ;FAT32_Simple.c: 117:     uint16_t i;
+[v _i `us ~T0 @X0 1 a ]
+"118
+[; ;FAT32_Simple.c: 118:     DirEntry *dir;
+[v _dir `*S143 ~T0 @X0 1 a ]
+"120
+[; ;FAT32_Simple.c: 120:     name_to_8_3(filename, name83);
+[e ( _name_to_8_3 (2 , _filename &U _name83 ]
+"123
+[; ;FAT32_Simple.c: 123:     sector = cluster_to_sector(fat_info.root_dir_first_cluster);
+[e = _sector ( _cluster_to_sector (1 . _fat_info 3 ]
+"125
+[; ;FAT32_Simple.c: 125:     for(uint8_t s = 0; s < fat_info.sectors_per_cluster; s++){
+{
+[v _s `uc ~T0 @X0 1 a ]
+[e = _s -> -> 0 `i `uc ]
+[e $U 185  ]
+[e :U 182 ]
+{
+"126
+[; ;FAT32_Simple.c: 126:         if(!SD_ReadSingleBlock(sector + s, sector_buffer))
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 186  ]
+"127
+[; ;FAT32_Simple.c: 127:             return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+[e :U 186 ]
+"129
+[; ;FAT32_Simple.c: 129:         dir = (DirEntry*)sector_buffer;
+[e = _dir -> &U _sector_buffer `*S143 ]
+"130
+[; ;FAT32_Simple.c: 130:         for(i = 0; i < 16; i++){
+{
+[e = _i -> -> 0 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 187  ]
+[e $U 188  ]
+[e :U 187 ]
+{
+"132
+[; ;FAT32_Simple.c: 132:             if(dir[i].name[0] == 0x00 || dir[i].name[0] == 0xE5){
+[e $ ! || == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 0 `i == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 229 `i 190  ]
+{
+"134
+[; ;FAT32_Simple.c: 134:                 memcpy(dir[i].name, name83, 11);
+[e ( _memcpy (3 , , -> &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `*v -> &U _name83 `*Cv -> -> 11 `i `ui ]
+"135
+[; ;FAT32_Simple.c: 135:                 dir[i].attr = 0x20;
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 1 -> -> 32 `i `uc ]
+"136
+[; ;FAT32_Simple.c: 136:                 dir[i].first_cluster_high = 0;
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 7 -> -> 0 `i `us ]
+"137
+[; ;FAT32_Simple.c: 137:                 dir[i].first_cluster_low = 0;
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 10 -> -> 0 `i `us ]
+"138
+[; ;FAT32_Simple.c: 138:                 dir[i].file_size = 0;
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 11 -> -> -> 0 `i `l `ul ]
+"141
+[; ;FAT32_Simple.c: 141:                 if(!SD_WriteSingleBlock(sector + s, sector_buffer))
+[e $ ! ! != -> ( _SD_WriteSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 191  ]
+"142
+[; ;FAT32_Simple.c: 142:                     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+[e :U 191 ]
+"144
+[; ;FAT32_Simple.c: 144:                 memcpy(entry, &dir[i], sizeof(DirEntry));
+[e ( _memcpy (3 , , -> _entry `*v -> &U *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux `*Cv -> # `S143 `ui ]
+"145
+[; ;FAT32_Simple.c: 145:                 return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 181  ]
+"146
+[; ;FAT32_Simple.c: 146:             }
+}
+[e :U 190 ]
+"147
+[; ;FAT32_Simple.c: 147:         }
+}
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 187  ]
+[e :U 188 ]
+}
+"148
+[; ;FAT32_Simple.c: 148:     }
+}
+[e ++ _s -> -> 1 `i `uc ]
+[e :U 185 ]
+[e $ < -> _s `ul . _fat_info 2 182  ]
+[e :U 183 ]
+}
+"150
+[; ;FAT32_Simple.c: 150:     return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+"151
+[; ;FAT32_Simple.c: 151: }
+[e :UE 181 ]
+}
+"157
+[; ;FAT32_Simple.c: 157: uint8_t FAT32_AppendToFile(DirEntry *entry, const char *data, uint16_t len){
+[v _FAT32_AppendToFile `(uc ~T0 @X0 1 ef3`*S143`*Cuc`us ]
+{
+[e :U _FAT32_AppendToFile ]
+[v _entry `*S143 ~T0 @X0 1 r1 ]
+[v _data `*Cuc ~T0 @X0 1 r2 ]
+[v _len `us ~T0 @X0 1 r3 ]
+[f ]
+"158
+[; ;FAT32_Simple.c: 158:     uint32_t cluster, sector;
+[v _cluster `ul ~T0 @X0 1 a ]
+[v _sector `ul ~T0 @X0 1 a ]
+"159
+[; ;FAT32_Simple.c: 159:     uint16_t offset, to_write;
+[v _offset `us ~T0 @X0 1 a ]
+[v _to_write `us ~T0 @X0 1 a ]
+"162
+[; ;FAT32_Simple.c: 162:     if(entry->first_cluster_low == 0){
+[e $ ! == -> . *U _entry 10 `ui -> -> 0 `i `ui 193  ]
+{
+"163
+[; ;FAT32_Simple.c: 163:         entry->first_cluster_low = 3;
+[e = . *U _entry 10 -> -> 3 `i `us ]
+"164
+[; ;FAT32_Simple.c: 164:         entry->first_cluster_high = 0;
+[e = . *U _entry 7 -> -> 0 `i `us ]
+"165
+[; ;FAT32_Simple.c: 165:     }
+}
+[e :U 193 ]
+"167
+[; ;FAT32_Simple.c: 167:     cluster = ((uint32_t)entry->first_cluster_high << 16) | entry->first_cluster_low;
+[e = _cluster | << -> . *U _entry 7 `ul -> 16 `i -> . *U _entry 10 `ul ]
+"168
+[; ;FAT32_Simple.c: 168:     sector = cluster_to_sector(cluster);
+[e = _sector ( _cluster_to_sector (1 _cluster ]
+"171
+[; ;FAT32_Simple.c: 171:     offset = entry->file_size % 512;
+[e = _offset -> % . *U _entry 11 -> -> -> 512 `i `l `ul `us ]
+"172
+[; ;FAT32_Simple.c: 172:     uint32_t sector_offset = entry->file_size / 512;
+[v _sector_offset `ul ~T0 @X0 1 a ]
+[e = _sector_offset / . *U _entry 11 -> -> -> 512 `i `l `ul ]
+"175
+[; ;FAT32_Simple.c: 175:     if(!SD_ReadSingleBlock(sector + sector_offset, sector_buffer))
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector _sector_offset &U _sector_buffer `i -> 0 `i 194  ]
+"176
+[; ;FAT32_Simple.c: 176:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 192  ]
+[e :U 194 ]
+"179
+[; ;FAT32_Simple.c: 179:     to_write = (offset + len > 512) ? (512 - offset) : len;
+[e = _to_write -> ? > + -> _offset `ui -> _len `ui -> -> 512 `i `ui : - -> -> 512 `i `ui -> _offset `ui -> _len `ui `us ]
+"180
+[; ;FAT32_Simple.c: 180:     memcpy(&sector_buffer[offset], data, to_write);
+[e ( _memcpy (3 , , -> &U *U + &U _sector_buffer * -> _offset `ux -> -> # *U &U _sector_buffer `ui `ux `*v -> _data `*Cv -> _to_write `ui ]
+"183
+[; ;FAT32_Simple.c: 183:     if(!SD_WriteSingleBlock(sector + sector_offset, sector_buffer))
+[e $ ! ! != -> ( _SD_WriteSingleBlock (2 , + _sector _sector_offset &U _sector_buffer `i -> 0 `i 195  ]
+"184
+[; ;FAT32_Simple.c: 184:         return 0;
+[e ) -> -> 0 `i `uc ]
+[e $UE 192  ]
+[e :U 195 ]
+"187
+[; ;FAT32_Simple.c: 187:     entry->file_size += to_write;
+[e =+ . *U _entry 11 -> _to_write `ul ]
+"189
+[; ;FAT32_Simple.c: 189:     return 1;
+[e ) -> -> 1 `i `uc ]
+[e $UE 192  ]
+"190
+[; ;FAT32_Simple.c: 190: }
+[e :UE 192 ]
+}

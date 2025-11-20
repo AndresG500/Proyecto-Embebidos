@@ -1,0 +1,800 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"29 ./LCD.h
+[v _Lcd_Write_Char `(v ~T0 @X0 0 ef1`uc ]
+"33 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[v _strcpy `(*uc ~T0 @X0 0 ef2`*uc`*Cuc ]
+"54
+[v _strlen `(ui ~T0 @X0 0 ef1`*Cuc ]
+"24 ./DS3231.h
+[s S143 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S143 . seconds minutes hours day date month year ]
+"17 ./FAT32_Simple.h
+[s S145 `uc -> 11 `i `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `ul 1 ]
+[n S145 . name attr reserved creation_time_tenth creation_time creation_date last_access_date first_cluster_high write_time write_date first_cluster_low file_size ]
+"38
+[v _FAT32_OpenFile `(uc ~T0 @X0 0 ef2`*Cuc`*S145 ]
+"40
+[v _FAT32_CreateFile `(uc ~T0 @X0 0 ef2`*Cuc`*S145 ]
+"39
+[v _FAT32_AppendToFile `(uc ~T0 @X0 0 ef3`*S145`*Cuc`us ]
+[p mainexit ]
+"3387 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3449
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"28 ./LCD.h
+[v _Lcd_Init `(v ~T0 @X0 0 ef ]
+"26
+[v _Lcd_Clear `(v ~T0 @X0 0 ef ]
+"27
+[v _Lcd_Set_Cursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"30
+[v _Lcd_Write_String `(v ~T0 @X0 0 ef1`*Cuc ]
+"13 ./DHT22.h
+[v _DHT22_init `(v ~T0 @X0 0 ef ]
+"34 ./DS3231.h
+[v _DS3231_Init `(v ~T0 @X0 0 ef ]
+[v F164 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
+[v __delay `JF164 ~T0 @X0 0 e ]
+[p i __delay ]
+"49 ./SD_SPI.h
+[v _SD_Init `(uc ~T0 @X0 0 ef ]
+"37 ./FAT32_Simple.h
+[v _FAT32_Init `(uc ~T0 @X0 0 ef ]
+"36 ./DS3231.h
+[v _DS3231_ReadTime `(uc ~T0 @X0 0 ef1`*S143 ]
+"14 ./DHT22.h
+[v _DHT22_read `(uc ~T0 @X0 0 ef2`*f`*f ]
+"2 main.c
+[p x FOSC  =  HS ]
+"3
+[p x WDTE  =  OFF ]
+"4
+[p x PWRTE  =  ON ]
+"5
+[p x MCLRE  =  ON ]
+"6
+[p x CP  =  OFF ]
+"7
+[p x CPD  =  OFF ]
+"8
+[p x BOREN  =  OFF ]
+"9
+[p x IESO  =  OFF ]
+"10
+[p x FCMEN  =  OFF ]
+"11
+[p x LVP  =  OFF ]
+"14
+[p x BOR4V  =  BOR40V ]
+"15
+[p x WRT  =  OFF ]
+"54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"230
+[; <" PORTB equ 06h ;# ">
+"292
+[; <" PORTC equ 07h ;# ">
+"354
+[; <" PORTD equ 08h ;# ">
+"416
+[; <" PORTE equ 09h ;# ">
+"454
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; <" T1CON equ 010h ;# ">
+"767
+[; <" TMR2 equ 011h ;# ">
+"774
+[; <" T2CON equ 012h ;# ">
+"845
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; <" SSPCON equ 014h ;# ">
+"922
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; <" TXREG equ 019h ;# ">
+"1142
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; <" TRISA equ 085h ;# ">
+"1480
+[; <" TRISB equ 086h ;# ">
+"1542
+[; <" TRISC equ 087h ;# ">
+"1604
+[; <" TRISD equ 088h ;# ">
+"1666
+[; <" TRISE equ 089h ;# ">
+"1704
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; <" PR2 equ 092h ;# ">
+"2050
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; <" MSK equ 093h ;# ">
+"2179
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; <" WPUB equ 095h ;# ">
+"2418
+[; <" IOCB equ 096h ;# ">
+"2488
+[; <" VRCON equ 097h ;# ">
+"2558
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; <" EECON2 equ 018Dh ;# ">
+"28 main.c
+[v _lcd_put2 `(v ~T0 @X0 1 sf1`uc ]
+{
+[e :U _lcd_put2 ]
+[v _v `uc ~T0 @X0 1 r1 ]
+[f ]
+"29
+[e ( _Lcd_Write_Char (1 -> + -> 48 `ui -> / -> _v `i -> 10 `i `ui `uc ]
+"30
+[e ( _Lcd_Write_Char (1 -> + -> 48 `ui -> % -> _v `i -> 10 `i `ui `uc ]
+"31
+[e :UE 146 ]
+}
+"33
+[v _lcd_put_uint `(v ~T0 @X0 1 sf1`us ]
+{
+[e :U _lcd_put_uint ]
+[v _v `us ~T0 @X0 1 r1 ]
+[f ]
+"34
+[v _buf `uc ~T0 @X0 -> 5 `i a ]
+"35
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v _j `uc ~T0 @X0 1 a ]
+"36
+[e $ ! == -> _v `ui -> -> 0 `i `ui 148  ]
+{
+[e ( _Lcd_Write_Char (1 -> -> 48 `ui `uc ]
+[e $UE 147  ]
+}
+[e :U 148 ]
+"37
+[e $U 149  ]
+[e :U 150 ]
+{
+[e = *U + &U _buf * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _buf `ui `ux -> + % -> _v `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+[e =/ _v -> -> 10 `i `ui ]
+}
+[e :U 149 ]
+[e $ && > -> _v `ui -> -> 0 `i `ui < -> _i `ui -> # _buf `ui 150  ]
+[e :U 151 ]
+"38
+{
+[e = _j -> -> 0 `i `uc ]
+[e $U 155  ]
+[e :U 152 ]
+[e ( _Lcd_Write_Char (1 *U + &U _buf * -> -> - - -> _i `i -> 1 `i -> _j `i `ui `ux -> -> # *U &U _buf `ui `ux ]
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 155 ]
+[e $ < -> _j `i -> _i `i 152  ]
+[e :U 153 ]
+}
+"39
+[e :UE 147 ]
+}
+"41
+[v _lcd_put_sign_fixed_1 `(v ~T0 @X0 1 sf1`f ]
+{
+[e :U _lcd_put_sign_fixed_1 ]
+[v _f `f ~T0 @X0 1 r1 ]
+[f ]
+"42
+[v _v10 `s ~T0 @X0 1 a ]
+"43
+[e $ ! >= _f -> -> 0 `i `f 157  ]
+{
+"44
+[e = _v10 -> + * _f -> .10.0 `f -> .0.5 `f `s ]
+"45
+}
+[e $U 158  ]
+[e :U 157 ]
+{
+"46
+[e = _v10 -> - * _f -> .10.0 `f -> .0.5 `f `s ]
+"47
+}
+[e :U 158 ]
+"49
+[e $ ! < -> _v10 `i -> 0 `i 159  ]
+{
+[e ( _Lcd_Write_Char (1 -> -> 45 `ui `uc ]
+[e = _v10 -> -U -> _v10 `i `s ]
+}
+[e :U 159 ]
+"50
+[v _ent `us ~T0 @X0 1 a ]
+[e = _ent -> / -> _v10 `i -> 10 `i `us ]
+"51
+[v _dec `uc ~T0 @X0 1 a ]
+[e = _dec -> % -> _v10 `i -> 10 `i `uc ]
+"53
+[e ( _lcd_put_uint (1 _ent ]
+"54
+[e ( _Lcd_Write_Char (1 -> -> 46 `ui `uc ]
+"55
+[e ( _Lcd_Write_Char (1 -> + -> 48 `ui -> _dec `ui `uc ]
+"56
+[e :UE 156 ]
+}
+"59
+[v _uint_to_str `(v ~T0 @X0 1 sf2`us`*uc ]
+{
+[e :U _uint_to_str ]
+[v _num `us ~T0 @X0 1 r1 ]
+[v _str `*uc ~T0 @X0 1 r2 ]
+[f ]
+"60
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[v _j `uc ~T0 @X0 1 a ]
+"61
+[v _temp `uc ~T0 @X0 -> 6 `i a ]
+"63
+[e $ ! == -> _num `ui -> -> 0 `i `ui 161  ]
+{
+"64
+[e = *U + _str * -> -> 0 `i `x -> -> # *U _str `i `x -> -> 48 `ui `uc ]
+"65
+[e = *U + _str * -> -> 1 `i `x -> -> # *U _str `i `x -> -> 0 `ui `uc ]
+"66
+[e $UE 160  ]
+"67
+}
+[e :U 161 ]
+"69
+[e $U 162  ]
+[e :U 163 ]
+{
+"70
+[e = *U + &U _temp * -> ++ _i -> -> 1 `i `uc `ux -> -> # *U &U _temp `ui `ux -> + % -> _num `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+"71
+[e =/ _num -> -> 10 `i `ui ]
+"72
+}
+[e :U 162 ]
+"69
+[e $ > -> _num `ui -> -> 0 `i `ui 163  ]
+[e :U 164 ]
+"74
+{
+[e = _j -> -> 0 `i `uc ]
+[e $U 168  ]
+[e :U 165 ]
+"75
+[e = *U + _str * -> _j `ux -> -> # *U _str `ui `ux *U + &U _temp * -> -> - - -> _i `i -> 1 `i -> _j `i `ui `ux -> -> # *U &U _temp `ui `ux ]
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 168 ]
+[e $ < -> _j `i -> _i `i 165  ]
+[e :U 166 ]
+}
+"76
+[e = *U + _str * -> _i `ux -> -> # *U _str `ui `ux -> -> 0 `ui `uc ]
+"77
+[e :UE 160 ]
+}
+"80
+[v _float_to_str `(v ~T0 @X0 1 sf2`f`*uc ]
+{
+[e :U _float_to_str ]
+[v _f `f ~T0 @X0 1 r1 ]
+[v _str `*uc ~T0 @X0 1 r2 ]
+[f ]
+"81
+[v _v10 `s ~T0 @X0 1 a ]
+"82
+[v _temp `uc ~T0 @X0 -> 8 `i a ]
+"83
+[v _idx `uc ~T0 @X0 1 a ]
+[e = _idx -> -> 0 `i `uc ]
+"85
+[e $ ! >= _f -> -> 0 `i `f 170  ]
+{
+"86
+[e = _v10 -> + * _f -> .10.0 `f -> .0.5 `f `s ]
+"87
+}
+[e $U 171  ]
+[e :U 170 ]
+{
+"88
+[e = _v10 -> - * _f -> .10.0 `f -> .0.5 `f `s ]
+"89
+}
+[e :U 171 ]
+"91
+[e $ ! < -> _v10 `i -> 0 `i 172  ]
+{
+"92
+[e = *U + _str * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U _str `ui `ux -> -> 45 `ui `uc ]
+"93
+[e = _v10 -> -U -> _v10 `i `s ]
+"94
+}
+[e :U 172 ]
+"96
+[v _ent `us ~T0 @X0 1 a ]
+[e = _ent -> / -> _v10 `i -> 10 `i `us ]
+"97
+[v _dec `uc ~T0 @X0 1 a ]
+[e = _dec -> % -> _v10 `i -> 10 `i `uc ]
+"99
+[e ( _uint_to_str (2 , _ent &U _temp ]
+"100
+[e ( _strcpy (2 , &U *U + _str * -> _idx `ux -> -> # *U _str `ui `ux -> &U _temp `*Cuc ]
+"101
+[e = _idx -> ( _strlen (1 -> _str `*Cuc `uc ]
+"103
+[e = *U + _str * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U _str `ui `ux -> -> 46 `ui `uc ]
+"104
+[e = *U + _str * -> ++ _idx -> -> 1 `i `uc `ux -> -> # *U _str `ui `ux -> + -> 48 `ui -> _dec `ui `uc ]
+"105
+[e = *U + _str * -> _idx `ux -> -> # *U _str `ui `ux -> -> 0 `ui `uc ]
+"106
+[e :UE 169 ]
+}
+"109
+[v _save_to_csv `(uc ~T0 @X0 1 sf3`*S143`f`f ]
+{
+[e :U _save_to_csv ]
+[v _tiempo `*S143 ~T0 @X0 1 r1 ]
+[v _temp `f ~T0 @X0 1 r2 ]
+[v _hum `f ~T0 @X0 1 r3 ]
+[f ]
+"110
+[v _line `uc ~T0 @X0 -> 80 `i a ]
+"111
+[v _temp_str `uc ~T0 @X0 -> 10 `i a ]
+[v _hum_str `uc ~T0 @X0 -> 10 `i a ]
+"112
+[v _file_entry `S145 ~T0 @X0 1 a ]
+"113
+[v _pos `uc ~T0 @X0 1 a ]
+[e = _pos -> -> 0 `i `uc ]
+"119
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> / -> . *U _tiempo 4 `i -> 10 `i `ui `uc ]
+"120
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> % -> . *U _tiempo 4 `i -> 10 `i `ui `uc ]
+"121
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 47 `ui `uc ]
+"122
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> / -> . *U _tiempo 5 `i -> 10 `i `ui `uc ]
+"123
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> % -> . *U _tiempo 5 `i -> 10 `i `ui `uc ]
+"124
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 47 `ui `uc ]
+"125
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> / -> . *U _tiempo 6 `i -> 10 `i `ui `uc ]
+"126
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> % -> . *U _tiempo 6 `i -> 10 `i `ui `uc ]
+"127
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 44 `ui `uc ]
+"130
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> / -> . *U _tiempo 2 `i -> 10 `i `ui `uc ]
+"131
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> % -> . *U _tiempo 2 `i -> 10 `i `ui `uc ]
+"132
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 58 `ui `uc ]
+"133
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> / -> . *U _tiempo 1 `i -> 10 `i `ui `uc ]
+"134
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> + -> 48 `ui -> % -> . *U _tiempo 1 `i -> 10 `i `ui `uc ]
+"135
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 44 `ui `uc ]
+"138
+[e ( _float_to_str (2 , _temp &U _temp_str ]
+"139
+[e ( _strcpy (2 , &U *U + &U _line * -> _pos `ux -> -> # *U &U _line `ui `ux -> &U _temp_str `*Cuc ]
+"140
+[e =+ _pos -> ( _strlen (1 -> &U _temp_str `*Cuc `uc ]
+"141
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 44 `ui `uc ]
+"144
+[e ( _float_to_str (2 , _hum &U _hum_str ]
+"145
+[e ( _strcpy (2 , &U *U + &U _line * -> _pos `ux -> -> # *U &U _line `ui `ux -> &U _hum_str `*Cuc ]
+"146
+[e =+ _pos -> ( _strlen (1 -> &U _hum_str `*Cuc `uc ]
+"149
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 13 `ui `uc ]
+"150
+[e = *U + &U _line * -> ++ _pos -> -> 1 `i `uc `ux -> -> # *U &U _line `ui `ux -> -> 10 `ui `uc ]
+"151
+[e = *U + &U _line * -> _pos `ux -> -> # *U &U _line `ui `ux -> -> 0 `ui `uc ]
+"154
+[e $ ! ! != -> ( _FAT32_OpenFile (2 , :s 2C &U _file_entry `i -> 0 `i 174  ]
+{
+"156
+[e $ ! ! != -> ( _FAT32_CreateFile (2 , :s 4C &U _file_entry `i -> 0 `i 175  ]
+"157
+[e ) -> -> 0 `i `uc ]
+[e $UE 173  ]
+[e :U 175 ]
+"160
+[v F1702 `Cuc ~T0 @X0 -> 33 `i s header ]
+[i F1702
+:U ..
+-> 70 `c
+-> 101 `c
+-> 99 `c
+-> 104 `c
+-> 97 `c
+-> 44 `c
+-> 72 `c
+-> 111 `c
+-> 114 `c
+-> 97 `c
+-> 44 `c
+-> 84 `c
+-> 101 `c
+-> 109 `c
+-> 112 `c
+-> 101 `c
+-> 114 `c
+-> 97 `c
+-> 116 `c
+-> 117 `c
+-> 114 `c
+-> 97 `c
+-> 44 `c
+-> 72 `c
+-> 117 `c
+-> 109 `c
+-> 101 `c
+-> 100 `c
+-> 97 `c
+-> 100 `c
+-> 13 `c
+-> 10 `c
+-> 0 `c
+..
+]
+"161
+[e $ ! ! != -> ( _FAT32_AppendToFile (3 , , &U _file_entry &U F1702 -> ( _strlen (1 &U F1702 `us `i -> 0 `i 176  ]
+"162
+[e ) -> -> 0 `i `uc ]
+[e $UE 173  ]
+[e :U 176 ]
+"163
+}
+[e :U 174 ]
+"166
+[e ) ( _FAT32_AppendToFile (3 , , &U _file_entry -> &U _line `*Cuc -> _pos `us ]
+[e $UE 173  ]
+"167
+[e :UE 173 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"169
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"170
+[v _tiempo `S143 ~T0 @X0 1 a ]
+"171
+[v _temp `f ~T0 @X0 1 a ]
+[e = _temp -> -> 0 `i `f ]
+[v _hum `f ~T0 @X0 1 a ]
+[e = _hum -> -> 0 `i `f ]
+"172
+[v _sd_ok `uc ~T0 @X0 1 a ]
+[e = _sd_ok -> -> 0 `i `uc ]
+"173
+[v _contador_5min `us ~T0 @X0 1 a ]
+[e = _contador_5min -> -> 0 `i `us ]
+"174
+[v F1709 `Cus ~T0 @X0 1 s TICKS_5MIN ]
+[i F1709
+-> -> 375 `i `us
+]
+"177
+[e = _ANSEL -> -> 0 `i `uc ]
+"178
+[e = _ANSELH -> -> 0 `i `uc ]
+"181
+[e ( _Lcd_Init ..  ]
+"182
+[e ( _Lcd_Clear ..  ]
+"183
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"184
+[e ( _Lcd_Write_String (1 :s 5C ]
+"187
+[e ( _DHT22_init ..  ]
+"188
+[e ( _DS3231_Init ..  ]
+"191
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"192
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"193
+[e ( _Lcd_Write_String (1 :s 6C ]
+"195
+[e $ ! != -> ( _SD_Init ..  `i -> 0 `i 178  ]
+{
+"196
+[e $ ! != -> ( _FAT32_Init ..  `i -> 0 `i 179  ]
+{
+"197
+[e = _sd_ok -> -> 1 `i `uc ]
+"198
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"199
+[e ( _Lcd_Write_String (1 :s 7C ]
+"200
+}
+[e $U 180  ]
+[e :U 179 ]
+{
+"201
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"202
+[e ( _Lcd_Write_String (1 :s 8C ]
+"203
+}
+[e :U 180 ]
+"204
+}
+[e $U 181  ]
+[e :U 178 ]
+{
+"205
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"206
+[e ( _Lcd_Write_String (1 :s 9C ]
+"207
+}
+[e :U 181 ]
+"209
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"210
+[e ( _Lcd_Clear ..  ]
+"212
+[e :U 183 ]
+{
+"214
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"215
+[e $ ! != -> ( _DS3231_ReadTime (1 &U _tiempo `i -> 0 `i 185  ]
+{
+"216
+[e ( _lcd_put2 (1 . _tiempo 4 ]
+[e ( _Lcd_Write_Char (1 -> -> 47 `ui `uc ]
+"217
+[e ( _lcd_put2 (1 . _tiempo 5 ]
+[e ( _Lcd_Write_Char (1 -> -> 47 `ui `uc ]
+"218
+[e ( _lcd_put2 (1 . _tiempo 6 ]
+[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
+"219
+[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
+"220
+[e ( _lcd_put2 (1 . _tiempo 2 ]
+[e ( _Lcd_Write_Char (1 -> -> 58 `ui `uc ]
+"221
+[e ( _lcd_put2 (1 . _tiempo 1 ]
+"222
+[e ( _Lcd_Write_String (1 :s 10C ]
+"223
+}
+[e $U 186  ]
+[e :U 185 ]
+{
+"224
+[e ( _Lcd_Write_String (1 :s 11C ]
+"225
+}
+[e :U 186 ]
+"228
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"229
+[e $ ! != -> ( _DHT22_read (2 , &U _temp &U _hum `i -> 0 `i 187  ]
+{
+"230
+[e ( _Lcd_Write_String (1 :s 12C ]
+"231
+[e ( _lcd_put_sign_fixed_1 (1 _temp ]
+"232
+[e ( _Lcd_Write_Char (1 -> -> 67 `ui `uc ]
+"233
+[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
+"234
+[e ( _Lcd_Write_Char (1 -> -> 72 `ui `uc ]
+"235
+[e ( _Lcd_Write_Char (1 -> -> 58 `ui `uc ]
+"236
+[e ( _lcd_put_sign_fixed_1 (1 _hum ]
+"237
+[e ( _Lcd_Write_Char (1 -> -> 37 `ui `uc ]
+"238
+[e ( _Lcd_Write_Char (1 -> -> 32 `ui `uc ]
+"239
+}
+[e $U 188  ]
+[e :U 187 ]
+{
+"240
+[e ( _Lcd_Write_String (1 :s 13C ]
+"241
+}
+[e :U 188 ]
+"244
+[e ++ _contador_5min -> -> 1 `i `us ]
+"245
+[e $ ! >= -> _contador_5min `ui -> F1709 `ui 189  ]
+{
+"246
+[e = _contador_5min -> -> 0 `i `us ]
+"248
+[e $ ! != -> _sd_ok `i -> 0 `i 190  ]
+{
+"250
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"251
+[e ( _Lcd_Write_String (1 :s 14C ]
+"253
+[e $ ! != -> ( _save_to_csv (3 , , &U _tiempo _temp _hum `i -> 0 `i 191  ]
+{
+"255
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"256
+[e ( _Lcd_Write_String (1 :s 15C ]
+"257
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"258
+}
+[e $U 192  ]
+[e :U 191 ]
+{
+"260
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"261
+[e ( _Lcd_Write_String (1 :s 16C ]
+"262
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"263
+}
+[e :U 192 ]
+"264
+}
+[e :U 190 ]
+"265
+}
+[e :U 189 ]
+"267
+[e ( __delay (1 -> * -> -> 800 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"268
+}
+[e :U 182 ]
+[e $U 183  ]
+[e :U 184 ]
+"269
+[e :UE 177 ]
+}
+[a 1C 68 65 84 79 83 46 67 83 86 0 ]
+[a 2C 68 65 84 79 83 46 67 83 86 0 ]
+[a 3C 68 65 84 79 83 46 67 83 86 0 ]
+[a 4C 68 65 84 79 83 46 67 83 86 0 ]
+[a 12C 84 58 0 ]
+[a 5C 73 110 105 99 105 97 110 100 111 46 46 46 0 ]
+[a 6C 73 110 105 116 32 83 68 46 46 46 0 ]
+[a 16C 69 114 114 111 114 32 101 115 99 114 105 116 117 114 97 33 0 ]
+[a 13C 84 58 45 45 46 45 67 32 72 58 45 45 46 45 37 32 0 ]
+[a 14C 71 117 97 114 100 97 110 100 111 46 46 46 32 32 32 32 0 ]
+[a 8C 70 65 84 51 50 32 69 82 82 79 82 33 32 32 32 32 0 ]
+[a 15C 71 117 97 114 100 97 100 111 32 79 75 33 32 32 32 32 0 ]
+[a 11C 82 84 67 32 69 82 82 79 82 33 32 32 32 32 32 32 0 ]
+[a 9C 83 68 32 69 82 82 79 82 33 32 32 32 32 32 32 32 0 ]
+[a 7C 83 68 32 79 75 33 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 10C 32 32 0 ]

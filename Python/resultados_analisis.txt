@@ -1,0 +1,24 @@
+REPORTE DE ANALISIS - TERMOMETRO DE HUMEDAD Y TEMPERATURA
+
+Fecha del reporte: 19/11/2025 08:18:10
+Registros analizados: 6
+Periodo de medicion: 14/11/2025 11:25 a 14/11/2025 11:50
+
+MEDICIONES
+Count   : 6 C        Count   : 6 %
+Mean    : 25.38 C        Mean    : 77.4 %
+Std     : 0.1 C        Std     : 0.52 %
+Min     : 25.3 C        Min     : 76.7 %
+25%     : 25.3 C        25%     : 76.97 %
+50%     : 25.35 C        50%     : 77.6 %
+75%     : 25.48 C        75%     : 77.78 %
+Max     : 25.5 C        Max     : 77.9 %
+
+PRONOSTICOS
+Paso     Fecha y Hora              Temperatura     Humedad        
+1        14/11/2025 11:55          25.30 C          76.70 %
+2        14/11/2025 12:00          25.30 C          76.70 %
+3        14/11/2025 12:05          25.30 C          76.70 %
+4        14/11/2025 12:10          25.30 C          76.70 %
+5        14/11/2025 12:15          25.30 C          76.70 %
+6        14/11/2025 12:20          25.30 C          76.70 %

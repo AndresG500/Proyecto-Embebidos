@@ -1,0 +1,337 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"1546 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[s S61 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S61 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1545
+[u S60 `S61 1 ]
+[n S60 . . ]
+"1557
+[v _TRISCbits `VS60 ~T0 @X0 0 e@135 ]
+"296
+[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S14 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"295
+[u S13 `S14 1 ]
+[n S13 . . ]
+"307
+[v _PORTCbits `VS13 ~T0 @X0 0 e@7 ]
+[v F164 `(v ~T0 @X0 1 tf1`ul ]
+"20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
+[v __delay `JF164 ~T0 @X0 0 e ]
+[p i __delay ]
+"54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"230
+[; <" PORTB equ 06h ;# ">
+"292
+[; <" PORTC equ 07h ;# ">
+"354
+[; <" PORTD equ 08h ;# ">
+"416
+[; <" PORTE equ 09h ;# ">
+"454
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; <" T1CON equ 010h ;# ">
+"767
+[; <" TMR2 equ 011h ;# ">
+"774
+[; <" T2CON equ 012h ;# ">
+"845
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; <" SSPCON equ 014h ;# ">
+"922
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; <" TXREG equ 019h ;# ">
+"1142
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; <" TRISA equ 085h ;# ">
+"1480
+[; <" TRISB equ 086h ;# ">
+"1542
+[; <" TRISC equ 087h ;# ">
+"1604
+[; <" TRISD equ 088h ;# ">
+"1666
+[; <" TRISE equ 089h ;# ">
+"1704
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; <" PR2 equ 092h ;# ">
+"2050
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; <" MSK equ 093h ;# ">
+"2179
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; <" WPUB equ 095h ;# ">
+"2418
+[; <" IOCB equ 096h ;# ">
+"2488
+[; <" VRCON equ 097h ;# ">
+"2558
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; <" EECON2 equ 018Dh ;# ">
+"3 DHT22.c
+[v _DHT22_init `(v ~T0 @X0 1 ef ]
+{
+[e :U _DHT22_init ]
+[f ]
+"4
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"5
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"6
+[e :UE 142 ]
+}
+"8
+[v _DHT22_read `(uc ~T0 @X0 1 ef2`*f`*f ]
+{
+[e :U _DHT22_read ]
+[v _dht_temperatura `*f ~T0 @X0 1 r1 ]
+[v _dht_humedad `*f ~T0 @X0 1 r2 ]
+[f ]
+"9
+[v _bits `uc ~T0 @X0 -> 5 `i a ]
+"10
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+"12
+[e = . . _PORTCbits 0 2 -> -> 0 `i `uc ]
+"13
+[e ( __delay (1 -> * -> -> 18 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"15
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"16
+[e ( __delay (1 -> * -> -> 40 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"18
+[e = . . _TRISCbits 0 2 -> -> 1 `i `uc ]
+"20
+[e $ ! != -> . . _PORTCbits 0 2 `i -> 0 `i 144  ]
+{
+"21
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"22
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"23
+[e ) -> -> 0 `i `uc ]
+[e $UE 143  ]
+"24
+}
+[e :U 144 ]
+"25
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"27
+[e $ ! ! != -> . . _PORTCbits 0 2 `i -> 0 `i 145  ]
+{
+"28
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"29
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"30
+[e ) -> -> 0 `i `uc ]
+[e $UE 143  ]
+"31
+}
+[e :U 145 ]
+"32
+[e ( __delay (1 -> * -> -> 80 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"34
+{
+[e = _j -> -> 0 `i `uc ]
+[e $ < -> _j `i -> 5 `i 146  ]
+[e $U 147  ]
+[e :U 146 ]
+"35
+{
+"36
+[v _result `uc ~T0 @X0 1 a ]
+[e = _result -> -> 0 `i `uc ]
+"37
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 149  ]
+[e $U 150  ]
+[e :U 149 ]
+"38
+{
+"39
+[e $U 152  ]
+[e :U 153 ]
+[e :U 152 ]
+[e $ ! != -> . . _PORTCbits 0 2 `i -> 0 `i 153  ]
+[e :U 154 ]
+"40
+[e ( __delay (1 -> * -> -> 35 `i `d / -> -> 20000000 `l `d .4000000.0 `ul ]
+"41
+[e $ ! != -> . . _PORTCbits 0 2 `i -> 0 `i 155  ]
+"42
+[e =| _result -> << -> 1 `i - -> 7 `i -> _i `i `uc ]
+[e :U 155 ]
+"44
+[e $U 156  ]
+[e :U 157 ]
+[e :U 156 ]
+[e $ != -> . . _PORTCbits 0 2 `i -> 0 `i 157  ]
+[e :U 158 ]
+"45
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 149  ]
+[e :U 150 ]
+}
+"46
+[e = *U + &U _bits * -> _j `ux -> -> # *U &U _bits `ui `ux _result ]
+"47
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e $ < -> _j `i -> 5 `i 146  ]
+[e :U 147 ]
+}
+"49
+[e = . . _TRISCbits 0 2 -> -> 0 `i `uc ]
+"50
+[e = . . _PORTCbits 0 2 -> -> 1 `i `uc ]
+"52
+[e $ ! == -> -> + + + -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `uc `i -> *U + &U _bits * -> -> -> 4 `i `ui `ux -> -> # *U &U _bits `ui `ux `i 159  ]
+"53
+{
+"54
+[v _rawhumidity `us ~T0 @X0 1 a ]
+[e = _rawhumidity -> | << -> *U + &U _bits * -> -> -> 0 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 1 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `us ]
+"55
+[v _rawtemperature `us ~T0 @X0 1 a ]
+[e = _rawtemperature -> | << -> *U + &U _bits * -> -> -> 2 `i `ui `ux -> -> # *U &U _bits `ui `ux `i -> 8 `i -> *U + &U _bits * -> -> -> 3 `i `ui `ux -> -> # *U &U _bits `ui `ux `i `us ]
+"57
+[e $ ! != & -> _rawtemperature `ui -> 32768 `ui -> -> 0 `i `ui 160  ]
+{
+"58
+[e = *U _dht_temperatura -> * -> -> / -> & -> _rawtemperature `ui -> -> 32767 `i `ui `d .10.0 `f `d -U .1.0 `f ]
+"59
+}
+[e $U 161  ]
+[e :U 160 ]
+{
+"60
+[e = *U _dht_temperatura -> / -> -> _rawtemperature `f `d .10.0 `f ]
+"61
+}
+[e :U 161 ]
+"62
+[e = *U _dht_humedad -> / -> -> _rawhumidity `f `d .10.0 `f ]
+"63
+[e ) -> -> 1 `i `uc ]
+[e $UE 143  ]
+"64
+}
+[e :U 159 ]
+"65
+[e ) -> -> 0 `i `uc ]
+[e $UE 143  ]
+"66
+[e :UE 143 ]
+}

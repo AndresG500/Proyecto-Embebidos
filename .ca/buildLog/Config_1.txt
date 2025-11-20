@@ -1,0 +1,45 @@
+make -f nbproject/Makefile-Config_1.mk SUBPROJECTS= .clean-conf
+make[1]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+rm -f  -r .ca/build/Config_1/production
+rm -f  -r .ca/dist/Config_1/production
+make[1]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+[32mCLEAN SUCCESSFUL (total time: 102ms)[0m
+make -f nbproject/Makefile-Config_1.mk SUBPROJECTS= .build-conf
+make  -f nbproject/Makefile-Config_1.mk .ca/dist/Config_1/production/temp-v2.X.production.hex
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/DHT22.p1 DHT22.c 
+DHT22.c:54:43: warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+   54 |         uint16_t rawhumidity = bits[0]<<8 | bits[1];
+      |                  ~~~~~~~~~~~   ~~~~~~~~~~~^~~~~~~~~
+DHT22.c:55:46: warning: implicit conversion changes signedness: 'int' to 'uint16_t' (aka 'unsigned short') [-Wsign-conversion]
+   55 |         uint16_t rawtemperature = bits[2]<<8 | bits[3];
+      |                  ~~~~~~~~~~~~~~   ~~~~~~~~~~~^~~~~~~~~
+2 warnings generated.
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/LCD.p1 LCD.c 
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/DS3231.p1 DS3231.c 
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/SD_SPI.p1 SD_SPI.c 
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/FAT32_Simple.p1 FAT32_Simple.c 
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -c   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_Config_1=Config_1  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits   -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o .ca/build/Config_1/production/main.p1 main.c 
+main.c:101:11: warning: implicit conversion loses integer precision: 'size_t' (aka 'unsigned int') to 'uint8_t' (aka 'unsigned char') [-Wimplicit-int-conversion]
+  101 |     idx = strlen(str);
+      |         ~ ^~~~~~~~~~~
+1 warning generated.
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+make[2]: Entering directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+"C:\Program Files\Microchip\xc8\v3.00\bin\xc8-cc.exe"  -mcpu=16F887 -Wl,-Map=.ca/dist/Config_1/production/temp-v2.X.production.map  -DXPRJ_Config_1=Config_1  -Wl,--defsym=__MPLAB_BUILD=1   -mdfp="C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8"  -O1 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto      -Wl,--memorysummary,.ca/dist/Config_1/production/memoryfile.xml -o .ca/dist/Config_1/production/temp-v2.X.production.elf  .ca/build/Config_1/production/DHT22.p1 .ca/build/Config_1/production/main.p1 .ca/build/Config_1/production/LCD.p1 .ca/build/Config_1/production/DS3231.p1 .ca/build/Config_1/production/SD_SPI.p1 .ca/build/Config_1/production/FAT32_Simple.p1     
+FAT32_Simple.c:5:: error: (1250) could not find space (512 bytes) for variable _sector_buffer
+make[2]: Leaving directory 'C:/Users/leseb/MPLABXProjects/temp-v2.X'
+[31mmake[2]: *** [nbproject/Makefile-Config_1.mk:214: .ca/dist/Config_1/production/temp-v2.X.production.hex] Error 1
+make[1]: *** [nbproject/Makefile-Config_1.mk:85: .build-conf] Error 2
+make: *** [nbproject/Makefile-impl.mk:39: .build-impl] Error 2[0m
+[31mBUILD FAILED (exit value 2, total time: 1s)[0m

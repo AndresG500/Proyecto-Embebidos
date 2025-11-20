@@ -1,0 +1,549 @@
+Version 4.0 HI-TECH Software Intermediate Code
+"8 ./FAT32_Simple.h
+[s S142 `ul 1 `ul 1 `ul 1 `ul 1 `us 1 ]
+[n S142 . fat_begin_lba cluster_begin_lba sectors_per_cluster root_dir_first_cluster bytes_per_sector ]
+"50 ./SD_SPI.h
+[v _SD_ReadSingleBlock `(uc ~T0 @X0 0 ef2`ul`*uc ]
+"17 ./FAT32_Simple.h
+[s S143 `uc -> 11 `i `uc 1 `uc 1 `uc 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `us 1 `ul 1 ]
+[n S143 . name attr reserved creation_time_tenth creation_time creation_date last_access_date first_cluster_high write_time write_date first_cluster_low file_size ]
+"30 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
+[v _memcmp `(i ~T0 @X0 0 ef3`*Cv`*Cv`ui ]
+"27
+[v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
+"51 ./SD_SPI.h
+[v _SD_WriteSingleBlock `(uc ~T0 @X0 0 ef2`ul`*uc ]
+"54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc/pic16f887.h
+[; <" INDF equ 00h ;# ">
+"61
+[; <" TMR0 equ 01h ;# ">
+"68
+[; <" PCL equ 02h ;# ">
+"75
+[; <" STATUS equ 03h ;# ">
+"161
+[; <" FSR equ 04h ;# ">
+"168
+[; <" PORTA equ 05h ;# ">
+"230
+[; <" PORTB equ 06h ;# ">
+"292
+[; <" PORTC equ 07h ;# ">
+"354
+[; <" PORTD equ 08h ;# ">
+"416
+[; <" PORTE equ 09h ;# ">
+"454
+[; <" PCLATH equ 0Ah ;# ">
+"461
+[; <" INTCON equ 0Bh ;# ">
+"539
+[; <" PIR1 equ 0Ch ;# ">
+"595
+[; <" PIR2 equ 0Dh ;# ">
+"652
+[; <" TMR1 equ 0Eh ;# ">
+"659
+[; <" TMR1L equ 0Eh ;# ">
+"666
+[; <" TMR1H equ 0Fh ;# ">
+"673
+[; <" T1CON equ 010h ;# ">
+"767
+[; <" TMR2 equ 011h ;# ">
+"774
+[; <" T2CON equ 012h ;# ">
+"845
+[; <" SSPBUF equ 013h ;# ">
+"852
+[; <" SSPCON equ 014h ;# ">
+"922
+[; <" CCPR1 equ 015h ;# ">
+"929
+[; <" CCPR1L equ 015h ;# ">
+"936
+[; <" CCPR1H equ 016h ;# ">
+"943
+[; <" CCP1CON equ 017h ;# ">
+"1040
+[; <" RCSTA equ 018h ;# ">
+"1135
+[; <" TXREG equ 019h ;# ">
+"1142
+[; <" RCREG equ 01Ah ;# ">
+"1149
+[; <" CCPR2 equ 01Bh ;# ">
+"1156
+[; <" CCPR2L equ 01Bh ;# ">
+"1163
+[; <" CCPR2H equ 01Ch ;# ">
+"1170
+[; <" CCP2CON equ 01Dh ;# ">
+"1240
+[; <" ADRESH equ 01Eh ;# ">
+"1247
+[; <" ADCON0 equ 01Fh ;# ">
+"1348
+[; <" OPTION_REG equ 081h ;# ">
+"1418
+[; <" TRISA equ 085h ;# ">
+"1480
+[; <" TRISB equ 086h ;# ">
+"1542
+[; <" TRISC equ 087h ;# ">
+"1604
+[; <" TRISD equ 088h ;# ">
+"1666
+[; <" TRISE equ 089h ;# ">
+"1704
+[; <" PIE1 equ 08Ch ;# ">
+"1760
+[; <" PIE2 equ 08Dh ;# ">
+"1817
+[; <" PCON equ 08Eh ;# ">
+"1864
+[; <" OSCCON equ 08Fh ;# ">
+"1929
+[; <" OSCTUNE equ 090h ;# ">
+"1981
+[; <" SSPCON2 equ 091h ;# ">
+"2043
+[; <" PR2 equ 092h ;# ">
+"2050
+[; <" SSPADD equ 093h ;# ">
+"2057
+[; <" SSPMSK equ 093h ;# ">
+"2062
+[; <" MSK equ 093h ;# ">
+"2179
+[; <" SSPSTAT equ 094h ;# ">
+"2348
+[; <" WPUB equ 095h ;# ">
+"2418
+[; <" IOCB equ 096h ;# ">
+"2488
+[; <" VRCON equ 097h ;# ">
+"2558
+[; <" TXSTA equ 098h ;# ">
+"2644
+[; <" SPBRG equ 099h ;# ">
+"2706
+[; <" SPBRGH equ 09Ah ;# ">
+"2776
+[; <" PWM1CON equ 09Bh ;# ">
+"2846
+[; <" ECCPAS equ 09Ch ;# ">
+"2928
+[; <" PSTRCON equ 09Dh ;# ">
+"2972
+[; <" ADRESL equ 09Eh ;# ">
+"2979
+[; <" ADCON1 equ 09Fh ;# ">
+"3013
+[; <" WDTCON equ 0105h ;# ">
+"3066
+[; <" CM1CON0 equ 0107h ;# ">
+"3131
+[; <" CM2CON0 equ 0108h ;# ">
+"3196
+[; <" CM2CON1 equ 0109h ;# ">
+"3247
+[; <" EEDATA equ 010Ch ;# ">
+"3252
+[; <" EEDAT equ 010Ch ;# ">
+"3259
+[; <" EEADR equ 010Dh ;# ">
+"3266
+[; <" EEDATH equ 010Eh ;# ">
+"3273
+[; <" EEADRH equ 010Fh ;# ">
+"3280
+[; <" SRCON equ 0185h ;# ">
+"3337
+[; <" BAUDCTL equ 0187h ;# ">
+"3389
+[; <" ANSEL equ 0188h ;# ">
+"3451
+[; <" ANSELH equ 0189h ;# ">
+"3501
+[; <" EECON1 equ 018Ch ;# ">
+"3546
+[; <" EECON2 equ 018Dh ;# ">
+"4 FAT32_Simple.c
+[v _fat_info `S142 ~T0 @X0 1 e ]
+"5
+[v _sector_buffer `uc ~T0 @X0 -> 512 `i e ]
+"8
+[v _FAT32_Init `(uc ~T0 @X0 1 ef ]
+{
+[e :U _FAT32_Init ]
+[f ]
+"9
+[v _ptr `*uc ~T0 @X0 1 a ]
+"12
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , -> -> -> 0 `i `l `ul &U _sector_buffer `i -> 0 `i 146  ]
+"13
+[e ) -> -> 0 `i `uc ]
+[e $UE 145  ]
+[e :U 146 ]
+"16
+[v _partition_lba `ul ~T0 @X0 1 a ]
+[e = _partition_lba *U -> &U *U + &U _sector_buffer * -> -> + -> 446 `i -> 8 `i `ui `ux -> -> # *U &U _sector_buffer `ui `ux `*ul ]
+"19
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , _partition_lba &U _sector_buffer `i -> 0 `i 147  ]
+"20
+[e ) -> -> 0 `i `uc ]
+[e $UE 145  ]
+[e :U 147 ]
+"23
+[e = _ptr &U _sector_buffer ]
+"24
+[e = . _fat_info 4 *U -> &U *U + _ptr * -> -> 11 `i `x -> -> # *U _ptr `i `x `*us ]
+"25
+[e = . _fat_info 2 -> *U + _ptr * -> -> 13 `i `x -> -> # *U _ptr `i `x `ul ]
+"26
+[v _reserved_sectors `us ~T0 @X0 1 a ]
+[e = _reserved_sectors *U -> &U *U + _ptr * -> -> 14 `i `x -> -> # *U _ptr `i `x `*us ]
+"27
+[v _sectors_per_fat `ul ~T0 @X0 1 a ]
+[e = _sectors_per_fat *U -> &U *U + _ptr * -> -> 36 `i `x -> -> # *U _ptr `i `x `*ul ]
+"28
+[e = . _fat_info 3 *U -> &U *U + _ptr * -> -> 44 `i `x -> -> # *U _ptr `i `x `*ul ]
+"31
+[e = . _fat_info 0 + _partition_lba -> _reserved_sectors `ul ]
+"32
+[e = . _fat_info 1 + . _fat_info 0 * -> -> -> 2 `i `l `ul _sectors_per_fat ]
+"34
+[e ) -> -> 1 `i `uc ]
+[e $UE 145  ]
+"35
+[e :UE 145 ]
+}
+"38
+[v _name_to_8_3 `(v ~T0 @X0 1 sf2`*Cuc`*uc ]
+{
+[e :U _name_to_8_3 ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _name83 `*uc ~T0 @X0 1 r2 ]
+[f ]
+"39
+[v _i `uc ~T0 @X0 1 a ]
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+"42
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 11 `i 149  ]
+[e $U 150  ]
+[e :U 149 ]
+"43
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> -> 32 `ui `uc ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 11 `i 149  ]
+[e :U 150 ]
+}
+"46
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 155  ]
+[e :U 152 ]
+{
+"47
+[e $ ! && >= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 97 `ui <= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 122 `ui 156  ]
+"48
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> - -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `i -> 32 `i `uc ]
+[e $U 157  ]
+"49
+[e :U 156 ]
+"50
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux ]
+[e :U 157 ]
+"51
+}
+[e ; ++ _i -> -> 1 `i `uc ++ _j -> -> 1 `i `uc ]
+[e :U 155 ]
+[e $ && && < -> _i `i -> 8 `i != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 152  ]
+[e :U 153 ]
+}
+"54
+[e $U 158  ]
+[e :U 159 ]
+"55
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 158 ]
+"54
+[e $ && != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 159  ]
+[e :U 160 ]
+"57
+[e $ ! == -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 46 `ui 161  ]
+{
+"58
+[e ++ _j -> -> 1 `i `uc ]
+"59
+{
+[e = _i -> -> 8 `i `uc ]
+[e $U 165  ]
+[e :U 162 ]
+{
+"60
+[e $ ! && >= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 97 `ui <= -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 122 `ui 166  ]
+"61
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux -> - -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `i -> 32 `i `uc ]
+[e $U 167  ]
+"62
+[e :U 166 ]
+"63
+[e = *U + _name83 * -> _i `ux -> -> # *U _name83 `ui `ux *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux ]
+[e :U 167 ]
+"64
+}
+[e ; ++ _i -> -> 1 `i `uc ++ _j -> -> 1 `i `uc ]
+[e :U 165 ]
+[e $ && < -> _i `i -> 11 `i != -> *U + _filename * -> _j `ux -> -> # *U _filename `ui `ux `ui -> 0 `ui 162  ]
+[e :U 163 ]
+}
+"65
+}
+[e :U 161 ]
+"66
+[e :UE 148 ]
+}
+"69
+[v _cluster_to_sector `(ul ~T0 @X0 1 sf1`ul ]
+{
+[e :U _cluster_to_sector ]
+[v _cluster `ul ~T0 @X0 1 r1 ]
+[f ]
+"70
+[e ) + . _fat_info 1 * - _cluster -> -> -> 2 `i `l `ul . _fat_info 2 ]
+[e $UE 168  ]
+"72
+[e :UE 168 ]
+}
+"75
+[v _FAT32_OpenFile `(uc ~T0 @X0 1 ef2`*Cuc`*S143 ]
+{
+[e :U _FAT32_OpenFile ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _entry `*S143 ~T0 @X0 1 r2 ]
+[f ]
+"76
+[v _name83 `uc ~T0 @X0 -> 11 `i a ]
+"77
+[v _sector `ul ~T0 @X0 1 a ]
+"78
+[v _i `us ~T0 @X0 1 a ]
+"79
+[v _dir `*S143 ~T0 @X0 1 a ]
+"81
+[e ( _name_to_8_3 (2 , _filename &U _name83 ]
+"84
+[e = _sector ( _cluster_to_sector (1 . _fat_info 3 ]
+"87
+{
+[v _s `uc ~T0 @X0 1 a ]
+[e = _s -> -> 0 `i `uc ]
+[e $U 173  ]
+[e :U 170 ]
+{
+"88
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 174  ]
+"89
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+[e :U 174 ]
+"92
+[e = _dir -> &U _sector_buffer `*S143 ]
+"93
+{
+[e = _i -> -> 0 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 175  ]
+[e $U 176  ]
+[e :U 175 ]
+{
+"95
+[e $ ! == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 0 `i 178  ]
+"96
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+[e :U 178 ]
+"99
+[e $ ! == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 229 `i 179  ]
+"100
+[e $U 177  ]
+[e :U 179 ]
+"103
+[e $ ! == ( _memcmp (3 , , -> &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `*Cv -> &U _name83 `*Cv -> -> 11 `i `ui -> 0 `i 180  ]
+{
+"104
+[e ( _memcpy (3 , , -> _entry `*v -> &U *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux `*Cv -> # `S143 `ui ]
+"105
+[e ) -> -> 1 `i `uc ]
+[e $UE 169  ]
+"106
+}
+[e :U 180 ]
+"107
+}
+[e :U 177 ]
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 175  ]
+[e :U 176 ]
+}
+"108
+}
+[e ++ _s -> -> 1 `i `uc ]
+[e :U 173 ]
+[e $ < -> _s `ul . _fat_info 2 170  ]
+[e :U 171 ]
+}
+"110
+[e ) -> -> 0 `i `uc ]
+[e $UE 169  ]
+"111
+[e :UE 169 ]
+}
+"114
+[v _FAT32_CreateFile `(uc ~T0 @X0 1 ef2`*Cuc`*S143 ]
+{
+[e :U _FAT32_CreateFile ]
+[v _filename `*Cuc ~T0 @X0 1 r1 ]
+[v _entry `*S143 ~T0 @X0 1 r2 ]
+[f ]
+"115
+[v _name83 `uc ~T0 @X0 -> 11 `i a ]
+"116
+[v _sector `ul ~T0 @X0 1 a ]
+"117
+[v _i `us ~T0 @X0 1 a ]
+"118
+[v _dir `*S143 ~T0 @X0 1 a ]
+"120
+[e ( _name_to_8_3 (2 , _filename &U _name83 ]
+"123
+[e = _sector ( _cluster_to_sector (1 . _fat_info 3 ]
+"125
+{
+[v _s `uc ~T0 @X0 1 a ]
+[e = _s -> -> 0 `i `uc ]
+[e $U 185  ]
+[e :U 182 ]
+{
+"126
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 186  ]
+"127
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+[e :U 186 ]
+"129
+[e = _dir -> &U _sector_buffer `*S143 ]
+"130
+{
+[e = _i -> -> 0 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 187  ]
+[e $U 188  ]
+[e :U 187 ]
+{
+"132
+[e $ ! || == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 0 `i == -> *U + &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 * -> -> -> 0 `i `ui `ux -> -> # *U &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `ui `ux `i -> 229 `i 190  ]
+{
+"134
+[e ( _memcpy (3 , , -> &U . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 0 `*v -> &U _name83 `*Cv -> -> 11 `i `ui ]
+"135
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 1 -> -> 32 `i `uc ]
+"136
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 7 -> -> 0 `i `us ]
+"137
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 10 -> -> 0 `i `us ]
+"138
+[e = . *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux 11 -> -> -> 0 `i `l `ul ]
+"141
+[e $ ! ! != -> ( _SD_WriteSingleBlock (2 , + _sector -> _s `ul &U _sector_buffer `i -> 0 `i 191  ]
+"142
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+[e :U 191 ]
+"144
+[e ( _memcpy (3 , , -> _entry `*v -> &U *U + _dir * -> _i `ux -> -> # *U _dir `ui `ux `*Cv -> # `S143 `ui ]
+"145
+[e ) -> -> 1 `i `uc ]
+[e $UE 181  ]
+"146
+}
+[e :U 190 ]
+"147
+}
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 16 `i `ui 187  ]
+[e :U 188 ]
+}
+"148
+}
+[e ++ _s -> -> 1 `i `uc ]
+[e :U 185 ]
+[e $ < -> _s `ul . _fat_info 2 182  ]
+[e :U 183 ]
+}
+"150
+[e ) -> -> 0 `i `uc ]
+[e $UE 181  ]
+"151
+[e :UE 181 ]
+}
+"157
+[v _FAT32_AppendToFile `(uc ~T0 @X0 1 ef3`*S143`*Cuc`us ]
+{
+[e :U _FAT32_AppendToFile ]
+[v _entry `*S143 ~T0 @X0 1 r1 ]
+[v _data `*Cuc ~T0 @X0 1 r2 ]
+[v _len `us ~T0 @X0 1 r3 ]
+[f ]
+"158
+[v _cluster `ul ~T0 @X0 1 a ]
+[v _sector `ul ~T0 @X0 1 a ]
+"159
+[v _offset `us ~T0 @X0 1 a ]
+[v _to_write `us ~T0 @X0 1 a ]
+"162
+[e $ ! == -> . *U _entry 10 `ui -> -> 0 `i `ui 193  ]
+{
+"163
+[e = . *U _entry 10 -> -> 3 `i `us ]
+"164
+[e = . *U _entry 7 -> -> 0 `i `us ]
+"165
+}
+[e :U 193 ]
+"167
+[e = _cluster | << -> . *U _entry 7 `ul -> 16 `i -> . *U _entry 10 `ul ]
+"168
+[e = _sector ( _cluster_to_sector (1 _cluster ]
+"171
+[e = _offset -> % . *U _entry 11 -> -> -> 512 `i `l `ul `us ]
+"172
+[v _sector_offset `ul ~T0 @X0 1 a ]
+[e = _sector_offset / . *U _entry 11 -> -> -> 512 `i `l `ul ]
+"175
+[e $ ! ! != -> ( _SD_ReadSingleBlock (2 , + _sector _sector_offset &U _sector_buffer `i -> 0 `i 194  ]
+"176
+[e ) -> -> 0 `i `uc ]
+[e $UE 192  ]
+[e :U 194 ]
+"179
+[e = _to_write -> ? > + -> _offset `ui -> _len `ui -> -> 512 `i `ui : - -> -> 512 `i `ui -> _offset `ui -> _len `ui `us ]
+"180
+[e ( _memcpy (3 , , -> &U *U + &U _sector_buffer * -> _offset `ux -> -> # *U &U _sector_buffer `ui `ux `*v -> _data `*Cv -> _to_write `ui ]
+"183
+[e $ ! ! != -> ( _SD_WriteSingleBlock (2 , + _sector _sector_offset &U _sector_buffer `i -> 0 `i 195  ]
+"184
+[e ) -> -> 0 `i `uc ]
+[e $UE 192  ]
+[e :U 195 ]
+"187
+[e =+ . *U _entry 11 -> _to_write `ul ]
+"189
+[e ) -> -> 1 `i `uc ]
+[e $UE 192  ]
+"190
+[e :UE 192 ]
+}
